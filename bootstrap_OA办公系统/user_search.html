@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/user.css">
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <style>
+        .myform-1{padding: 10px;border: 1px solid #ccc;border-top: none;padding-bottom: 50px;}
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">OA办公系统</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">
+                    <span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;&nbsp;管理首页 <span class="sr-only">(current)</span></a></li>
+                <li class="active"><a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;用户管理</a></li>
+                <li><a href="manager.html"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;&nbsp;内容管理</a></li>
+                <li><a href="label.html"><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;&nbsp;标签管理</a></li>
+                <li><a href="email.html"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;&nbsp;我的邮箱</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <div class="avatar">
+                        <img src="images/touxiang.jpg" class="img-circle img-responsive"/>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">管理员<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-screenshot"></span>&nbsp;&nbsp;&nbsp;前台首页</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;&nbsp;个人主页</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-asterisk"></span>&nbsp;&nbsp;&nbsp;个人设置</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-credit-card"></span>&nbsp;&nbsp;&nbsp;账户中心</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;&nbsp;我的收藏</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;&nbsp;退出</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更换主题<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-screenshot"></span>&nbsp;&nbsp;&nbsp;太空灰</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;&nbsp;土豪金</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-asterisk"></span>&nbsp;&nbsp;&nbsp;玫瑰金</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="list-group">
+                <a href="user.html" class="list-group-item">用户管理</a>
+                <a href="user_search.html" class="list-group-item active">用户搜索</a>
+                <a href="#" class="list-group-item"  data-toggle="modal" data-target="#myModal">用户添加</a>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="page-header my-p-header">
+                <h4>用户管理</h4>
+            </div>
+            <ul class="nav nav-tabs">
+                <li role="presentation"><a href="user.html">用户列表</a></li>
+                <li role="presentation" class="active"><a href="user_search.html">用户搜索</a></li>
+                <li role="presentation"><a href="#"   data-toggle="modal" data-target="#myModal">用户添加</a></li>
+            </ul>
+            <form class="myform-1">
+                <div class="alert alert-info" role="alert">技巧提示：支持模糊搜索和匹配搜索，匹配搜索使用*代替！</div>
+                <div class="form-group">
+                    <label for="username">用户名</label>
+                    <input type="text" class="form-control" id="username" placeholder="请输入用户名">
+                </div>
+                <div class="form-group">
+                    <label for="userid">UID</label>
+                    <input type="text" class="form-control" id="userid" placeholder="请输入UID">
+                </div>
+                <div class="form-group">
+                    <label for="usergroup">选择用户组</label>
+                    <select id="usergroup" class="form-control" >
+                        <option value="">普通会员</option>
+                        <option value="">高级用户</option>
+                        <option value="">钻石会员</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-default">提交</button>
+            </form>
+            <nav aria-label="Page navigation" class="pull-right">
+                <ul class="pagination">
+                    <li class="disabled">
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">添加用户</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form >
+                                <div class="form-group">
+                                    <label for="username1">用户名</label>
+                                    <input type="text" class="form-control" id="username1" placeholder="请输入用户名">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">用户密码</label>
+                                    <input type="password" class="form-control" id="password" placeholder="请输入用户密码">
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirm">确认用户密码</label>
+                                    <input type="password" class="form-control" id="confirm" placeholder="请输入用户密码">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">请输入用户邮箱</label>
+                                    <input type="email" class="form-control" id="email" placeholder="请输入用户邮箱">
+                                </div>
+                                <div class="form-group">
+                                    <label for="userbelong">所属用户组</label>
+                                    <select id="userbelong" class="form-control" >
+                                        <option value="">普通会员</option>
+                                        <option value="">高级用户</option>
+                                        <option value="">钻石会员</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            <button type="button" class="btn btn-primary">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="text-center">
+    <div class="container" style="line-height: 50px;">联系方式：234234312</div>
+</footer>
+</body>
+</html>
+<script>
+</script>>
